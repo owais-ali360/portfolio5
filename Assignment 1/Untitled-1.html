@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Sign up foam</title>
+    <style>
+        div1 {
+            width: 450px;
+            margin: auto;
+            opacity: 0.8;
+        }
+        
+        div1 :hover {
+            opacity: 1;
+        }
+        
+        div {
+            width: 550px;
+            margin: auto;
+        }
+        
+        div3 {
+            margin-left: 30px;
+            display: flex;
+        }
+        
+        form {
+            padding: 10px;
+            border-radius: 8px;
+            border: 2px solid red;
+            width: 400px;
+            background-color: springgreen;
+            margin-left: 40px;
+        }
+        
+        label {
+            display: flex;
+            margin-bottom: 8px;
+            margin-left: 30px;
+            color: darkslateblue;
+        }
+        
+        input {
+            width: 60%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #3dd;
+            border-radius: 4px;
+            margin-left: 30px;
+        }
+        
+        button {
+            background-color: #3dd;
+            color: #fff;
+            padding: 10px 15px;
+            border: blueviolet;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 120px;
+            font-size: 30px;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            background-color: #4caf50;
+        }
+        
+        body {
+            background-image: url('321.jpg')
+        }
+        
+        #cond {
+            display: flex;
+            margin-left: 130px;
+            margin-top: -22px;
+        }
+        
+        #chkb {
+            margin-top: 10px;
+        }
+        
+        p {
+            margin-left: 30px;
+        }
+        
+        h1 {
+            color: limegreen;
+            margin-left: 150px;
+            font-size: 50px;
+        }
+        
+        #male {
+            margin-left: -85px;
+        }
+        
+        #female {
+            margin-left: -95px;
+        }
+        
+        a {
+            margin-left: 30px;
+            color: red;
+        }
+    </style>
+    <div>
+
+        <body>
+
+            <div>
+                <h1> Sign Up</h1>
+            </div>
+            <div1>
+                <form id="signupForm" onsubmit="return validateForm()">
+                    <div> <label for="fname">Enter First Name:</label>
+                        <input type="text" id="fname" name="fname" required></div>
+
+                    <div> <label for="lname">Enter Last Name:</label>
+                        <input type="lname" id="lname" name="lname" required> </div>
+
+                    <div> <label for="email">Enter E-mail:</label>
+                        <input type="email" id="email" name="email" required> </div>
+
+                    <div> <label for="con">Enter Mobile Number:</label>
+                        <input type="number" id="con" name="con" required> </div>
+
+
+                    <div> <label for="pass">Password:</label> <input type="password" id="pass" name="pass" required></div>
+
+
+                    <div> <label for="Cpass">Confirm Password:</label>
+                        <input type="password" id="Cpass" name="Cpass"></div>
+                    <div><label for="gender">Gender:</label></div>
+                    <div3>Male <input type="radio" id="male" name="gender" value="male" required></div3>
+                    <div3>Female <input type="radio" id="female" name="gender" value="female"></div3>
+
+                    <div><label for="terms" id="chkb"> I Have Accepted Terms and Conditions</label></div>
+                    <div><input type="checkbox" id="cond" name="cond" value="I Have Accepted Terms and Conditions" required></div>
+                    <a href="sign in.html" target="_blank">If you have an account click here....</a>
+
+                    <div5 class="error" id="error-message"></div5>
+
+                    <div><button> Sign Up </button></div>
+
+
+            </div1>
+            </form>
+
+    </div>
+    <script>
+        function validateForm() {
+            var username = document.getElementById('fname').value;
+            var lusername = document.getElementById('lname').value;
+            var contact = document.getElementById('con').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('pass').value;
+            var confirmPassword = document.getElementById('Cpass').value;
+
+            if (username.length < 3 || username.length > 10) {
+                alert('Error: First name must be between 3 to 10 characters');
+                return false;
+            }
+
+            if (lusername.length < 3 || lusername.length > 8) {
+                alert('Error: Last name must be between 3 to 8 characters');
+                return false;
+            }
+
+            if (contact.length < 11 || contact.length > 11) {
+                alert('Error: Number must be 11 characters');
+                return false;
+            }
+            if (password.length < 8 || password.length > 15) {
+                alert('Error: Password must be between 8 to 15 characters');
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert('Error: Passwords do not match');
+                return false;
+            }
+            alert('Sign up successful!');
+            return true;
+        }
+    </script>
+    </body>
+</head>
+
+</html>

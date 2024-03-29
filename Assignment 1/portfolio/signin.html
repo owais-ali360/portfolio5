@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Sign in foam</title>
+    <style>
+        div {
+            padding: 10px;
+            margin-left: 70px;
+        }
+        
+        div1 {
+            margin: auto;
+            opacity: 0.8;
+        }
+        
+        form {
+            padding: 10px;
+            border-radius: 8px;
+            border: 2px solid red;
+            width: 340px;
+            background-color: springgreen;
+            margin-left: 430px;
+        }
+        
+        body {
+            background-image: url('123.jpg')
+        }
+        
+        label {
+            display: flex;
+            margin-bottom: 8px;
+            margin-left: 30px;
+            color: darkslateblue;
+        }
+        
+        button {
+            background-color: #3dd;
+            color: #fff;
+            padding: 10px 15px;
+            border: blueviolet;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 25px;
+            width: 120px;
+            margin-left: 95px;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            background-color: #4caf50;
+        }
+        
+        h1 {
+            text-align: center;
+            color: limegreen;
+            font-size: 60px;
+        }
+        
+        input {
+            width: 80%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #3dd;
+            border-radius: 4px;
+            margin-left: 30px;
+        }
+        
+        a {
+            margin-left: 30px;
+            color: darkblue;
+        }
+        
+        #error-message {
+            color: red;
+        }
+    </style>
+    <div>
+
+        <body>
+            <h1>Sign In</h1>
+            <div1>
+                <form id="signinForm" onsubmit="return validateForm()">
+                    <label for="email">Enter E-mail</label>
+                    <input type="text" id="email" name="email">
+                    <br>
+                    <label for="password">Enter Password</label>
+                    <input type="password" id="pass" name="pass">
+                    <br>
+                    <a href="untitled-1.html" target="_blank">If you don't have account click here....</a>
+                    <br>
+                    <div class="error" id="error-message"></div>
+
+                    <button>Sign in</button>
+                </form>
+                <div id="errorMessage" class="error"></div>
+            </div1>
+    </div>
+    <script>
+        function validateForm() {
+            var username = document.getElementById("email").value;
+            var password = document.getElementById("pass").value;
+            var errorMessage = document.getElementById("error-message");
+
+            if (username !== "Admin" || password !== "Admin") {
+                errorMessage.innerText = "Email or Password is incorrect.";
+                return false;
+            } else {
+                errorMessage.innerText = "";
+                window.location.href = "bweb.html";
+                return false;
+            }
+        }
+    </script>
+    </body>
+</head>
+
+</html>
